@@ -2,14 +2,11 @@ from turtle import *
 import random
 import math
 
-# Setup screen
 screen = Screen()
 screen.bgcolor("MidnightBlue")  # Dark background for better contrast
 
-# Color options
 colors = ["HotPink", "DeepSkyBlue", "Gold", "White", "Lavender", "Cyan", "OrangeRed", "Plum"]
 
-# Setup turtle
 t = Turtle()
 t.speed(0)
 t.pensize(2)
@@ -55,12 +52,12 @@ for _ in range(20):  # Adjust this number to add more snowflakes
     t.color(random.choice(colors))  
     t.pencolor(random.choice(colors))
     
-    # Generate random properties for each snowflake
+# Generate random properties for each snowflake
     arms = random.randint(8, 18)  # More arms for complex snowflakes
     size = random.randint(50, 120)  # Random snowflake size
     branches = random.randint(6, 12)  # More V-shapes per arm
 
-    # Find a safe position to place the snowflake
+# Find a safe position to place the snowflake
     while True:
         x = random.randint(-250, 250)  
         y = random.randint(-250, 250)  
@@ -68,7 +65,7 @@ for _ in range(20):  # Adjust this number to add more snowflakes
             placed_positions.append((x, y))
             break  # Found a good spot
 
-    # Move to the safe position
+# Move to the safe position
     t.penup()
     t.goto(x, y)
     t.pendown()
